@@ -18,5 +18,5 @@ Vollständige ESPHome External Component für den MPU9250 IMU Sensor.
 external_components:
   - source:
       type: git
-      url: https://github.com/DEIN_NAME/esphome-mpu9250
+      url: https://github.com/DUspizig/esphome-mpu9250
       ref: main
