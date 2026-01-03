@@ -1,0 +1,38 @@
+esphome:
+  name: mpu9250_test
+  platform: ESP32
+  board: esp32dev
+
+external_components:
+  - source:
+      type: git
+      url: https://github.com/Uspizig/esphome-mpu9250
+
+i2c:
+  sda: 21
+  scl: 22
+
+button:
+  - platform: mpu9250
+    calibrate:
+      name: "MPU9250 Kalibrieren"
+
+sensor:
+  - platform: mpu9250
+    accel:
+      x: { name: "Accel X" }
+      y: { name: "Accel Y" }
+      z: { name: "Accel Z" }
+    gyro:
+      x: { name: "Gyro X" }
+      y: { name: "Gyro Y" }
+      z: { name: "Gyro Z" }
+    mag:
+      x: { name: "Mag X" }
+      y: { name: "Mag Y" }
+      z: { name: "Mag Z" }
+    heading:
+      name: "Yaw (Madgwick)"
+    declination: 2.3
+    use_madgwick: true
+x
